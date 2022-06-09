@@ -86,6 +86,7 @@ const Home: NextPage = () => {
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       const _owner = await nftContract.owner();
       const signer = await getProviderOrSigner(true);
+      // @ts-ignore
       const address = await signer.getAddress();
       if (address.toLowerCase() === _owner.toLowerCase()) {
         setIsOwner(true);
